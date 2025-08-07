@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: frontend-tls
+  namespace: default
+spec:
+  secretName: frontend-tls
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer
+  commonName: frontend.pca-svm.local
+  dnsNames:
+    - frontend.pca-svm.local
