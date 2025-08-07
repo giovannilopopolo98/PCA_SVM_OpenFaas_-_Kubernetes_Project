@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway-backend
+  namespace: default
+spec:
+  selector:
+    app: gateway-backend
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 8080
