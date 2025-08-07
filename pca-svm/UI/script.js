@@ -11,9 +11,13 @@ document.getElementById("upload-form").addEventListener("submit", async (e) => {
   resultElement.textContent = "Uploading and processing...";
 
   try {
-    const response = await fetch("http://10.0.3.16:30080/upload/", {
-      method: "POST",
-      body: formData,
+    const text = await file.text();
+    const response = await fetch("/upload/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain"
+        },
+        body: text,
     });
 
     if (!response.ok) {
