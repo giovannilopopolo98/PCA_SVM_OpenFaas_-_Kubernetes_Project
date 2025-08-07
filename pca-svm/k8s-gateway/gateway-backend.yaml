@@ -15,6 +15,14 @@ spec:
     spec:
       containers:
       - name: gateway-backend
-        image: giovannilopopolo98/pca-svm-gateway:latest
+        image: giovannilopopolo98/pca-svm-gateway:v4
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
