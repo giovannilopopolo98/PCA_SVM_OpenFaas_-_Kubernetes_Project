@@ -2,9 +2,9 @@ from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.responses import JSONResponse
 from io import StringIO
 import pandas as pd
-from core import mainlogic  # importa la logica di PCA+SVM
+from core import main_logic  # importa la logica di PCA+SVM
 app = FastAPI()
-@app.get("//health")
+@app.get("/_/health")
 async def health_check():
     return JSONResponse(content={"status": "ok"})
 @app.post("/predict")
@@ -17,4 +17,5 @@ async def predict(file: UploadFile = File(...)):
         output = main_logic(df)
         return output
     except Exception as e:
+
         raise HTTPException(status_code=500, detail=str(e))
