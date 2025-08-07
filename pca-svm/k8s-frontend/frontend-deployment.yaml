@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: giovannilopopolo98/pca-svm-ui:v2
+          image: giovannilopopolo98/pca-svm-ui:v6
           ports:
             - containerPort: 80
