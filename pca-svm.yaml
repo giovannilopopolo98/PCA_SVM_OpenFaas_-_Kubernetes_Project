@@ -7,5 +7,11 @@ functions:
   pca-svm:
     lang: dockerfile
     handler: ./pca-svm
-    image: giovannilopopolo98/pca-svm-fixed:latest
+    image: giovannilopopolo98/pca-svm:v6
     skip_build: false
+    limits:
+      memory: 1Gi
+      cpu: 1000m
+    requests:
+      memory: 512Mi
+      cpu: 250m
