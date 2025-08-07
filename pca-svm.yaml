@@ -1,0 +1,11 @@
+version: 1.0
+provider:
+  name: openfaas
+  gateway: http://10.0.3.15:31112
+
+functions:
+  pca-svm:
+    lang: dockerfile
+    handler: ./pca-svm
+    image: giovannilopopolo98/pca-svm-fixed:latest
+    skip_build: false
