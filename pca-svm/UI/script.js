@@ -11,13 +11,9 @@ document.getElementById("upload-form").addEventListener("submit", async (e) => {
   resultElement.textContent = "Uploading and processing...";
 
   try {
-    const text = await file.text();
     const response = await fetch("/upload/", {
         method: "POST",
-        headers: {
-          "Content-Type": "text/plain"
-        },
-        body: text,
+        body: formData,
     });
 
     if (!response.ok) {
@@ -29,4 +25,5 @@ document.getElementById("upload-form").addEventListener("submit", async (e) => {
   } catch (err) {
     resultElement.textContent = `Errore: ${err.message}`;
   }
+
 });
