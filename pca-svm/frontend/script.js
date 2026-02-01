@@ -15,7 +15,7 @@ async function uploadFile() {
     formData.append("file", file);
 
     try {
-        // Percorso relativo (funziona grazie all'Ingress unificato)
+        // Percorso relativo
         const response = await fetch("/upload/", { 
             method: "POST",
             body: formData
@@ -28,13 +28,11 @@ async function uploadFile() {
 
         const data = await response.json();
         
-        // --- DEBUG: GUARDA QUI NELLA CONSOLE ---
         console.log("RISPOSTA DAL SERVER:", data);
 
         if (data.error) {
             alert("Errore dal Backend: " + data.error);
         } else {
-            // 2. RENDIAMO IL CODICE ROBUSTO
             // Se c'è data.result usa quello, altrimenti usa data intero
             const finalResult = data.result || data;
             
