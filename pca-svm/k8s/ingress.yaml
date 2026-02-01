@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: pca-svm-ingress
+  namespace: pca-svm
+  annotations:
+    # Riscrive il percorso per il backend (toglie /upload quando passa la richiesta a Python)
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    # Aumenta il limite di upload per i file CSV grossi (opzionale ma consigliato)
+    nginx.ingress.kubernetes.io/proxy-body-size: "50m"
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: pcasvm.local
+    http:
+      paths:
+      # REGOLA 1: Tutto ciò che inizia con /upload/ va al Gateway Python
+      - path: /upload(/|$)(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: gateway
+            port:
+              number: 80
+
+      # REGOLA 2: Tutto il resto (/) va al Frontend 
+      - path: /()(.*)
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: frontend
+            port:
+              number: 80

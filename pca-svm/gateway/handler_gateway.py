@@ -15,7 +15,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-@app.post("/upload/")
+@app.post("/")
 async def upload(file: UploadFile = File(...)):
     if not file.filename.endswith(".csv"):
         return {"error": "Formato file non valido. Atteso .csv"}

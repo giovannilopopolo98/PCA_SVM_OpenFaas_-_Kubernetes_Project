@@ -1,27 +1,93 @@
+:root {
+    --bg-color: #0f172a;
+    --card-bg: #1e293b;
+    --primary: #3b82f6;
+    --primary-hover: #2563eb;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+}
+
 body {
-  font-family: sans-serif;
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .container {
-  background-color: white;
-  padding: 2em;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
 }
 
-input[type="file"] {
-  margin-bottom: 1em;
+h1 { font-weight: 600; letter-spacing: -1px; margin-bottom: 10px; }
+.highlight { color: var(--primary); }
+p { color: var(--text-muted); }
+
+.card {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
 }
 
-pre {
-  margin-top: 1em;
-  background: #eee;
-  padding: 1em;
-  max-height: 200px;
-  overflow-y: auto;
+/* File Input */
+.file-input { display: none; }
+.file-label {
+    display: inline-block;
+    padding: 12px 24px;
+    border: 2px dashed var(--text-muted);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
 }
+.file-label:hover { border-color: var(--primary); color: var(--primary); }
+.file-name { margin: 15px 0; font-size: 0.9rem; color: var(--primary); }
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-1px); }
+
+/* Loader */
+.hidden { display: none; }
+#loader { margin-top: 20px; }
+.spinner {
+    width: 40px; height: 40px;
+    border: 4px solid var(--text-muted);
+    border-top: 4px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* Results */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+.metric-card, .details-card {
+    background: #334155;
+    padding: 15px;
+    border-radius: 8px;
+}
+.metric-card h3 { font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); margin: 0; }
+.metric-card p { font-size: 1.5rem; font-weight: bold; margin: 5px 0 0; }
+.details-card { margin-top: 15px; text-align: left; }
+.code-output { font-family: monospace; background: #0f172a; padding: 10px; border-radius: 4px; overflow-x: auto; }
