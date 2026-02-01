@@ -30,7 +30,7 @@ Il sistema segue un pattern a microservizi event-driven:
 ## ✨ Funzionalità Chiave
 
 * **⚡ Serverless ML:** L'addestramento del modello avviene on-demand su funzioni OpenFaaS, garantendo scalabilità e ottimizzazione delle risorse.
-* **🌐 Unified Ingress:** Configurazione avanzata con rewrite-target per esporre l'intera applicazione su un singolo dominio (`http://pca-svm.local`).
+* **🌐 Unified Ingress:** Configurazione avanzata con rewrite-target per esporre l'intera applicazione su un singolo dominio (`http://pcasvm.local`).
 * **🧠 Algoritmi Avanzati:** * *PCA (Principal Component Analysis)*: Riduzione del 95% della varianza.
     * *SVM (Support Vector Machine)*: Classificazione con Cross-Validation.
 * **🎨 Modern UI:** Interfaccia responsive con feedback in tempo reale.
