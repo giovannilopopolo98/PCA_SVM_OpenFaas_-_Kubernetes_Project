@@ -23,7 +23,7 @@ Il sistema segue un pattern a microservizi event-driven:
 4.  **OpenFaaS Function:** Esegue il calcolo pesante (PCA + GridSearch SVM) in container effimeri e scalabili, restituendo i risultati in formato JSON.
 
 ### Flusso dei Dati
-`User` ➡️ `Ingress (pca-svm.local)` ➡️ `Gateway` ➡️ `OpenFaaS (ML Function)` ➡️ `Response`
+`User` ➡️ `Ingress (pcasvm.local)` ➡️ `Gateway` ➡️ `OpenFaaS (ML Function)` ➡️ `Response`
 
 ---
 
