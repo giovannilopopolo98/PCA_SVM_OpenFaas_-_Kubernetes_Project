@@ -17,7 +17,7 @@ Progetto realizzato per il corso di **Virtual Networks and Cloud Computing**.
 
 Il sistema segue un pattern a microservizi event-driven:
 
-1.  **Frontend (React):** Interfaccia utente "Dark Mode" per il caricamento dei file CSV e la visualizzazione dei risultati (Matrice di confusione, varianza spiegata).
+1.  **Frontend:** Interfaccia utente "Dark Mode" per il caricamento dei file CSV e la visualizzazione dei risultati (Matrice di confusione, varianza spiegata).
 2.  **API Gateway (Python FastAPI):** Gestisce le richieste in ingresso, valida i dati e invoca le funzioni serverless.
 3.  **Ingress Controller (Nginx):** Gestisce il routing del traffico tramite **Fan-out** su un unico dominio locale (`pca-svm.local`), smistando tra UI e API.
 4.  **OpenFaaS Function:** Esegue il calcolo pesante (PCA + GridSearch SVM) in container effimeri e scalabili, restituendo i risultati in formato JSON.
