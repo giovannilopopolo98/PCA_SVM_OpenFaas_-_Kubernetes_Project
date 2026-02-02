@@ -7,7 +7,7 @@
 
 Questo progetto implementa un'architettura **Cloud-Native** per l'addestramento distribuito e l'analisi di dataset tramite algoritmi di Machine Learning (**PCA** per la riduzione dimensionale e **SVM** per la classificazione).
 
-Il sistema è orchestrato su **Kubernetes**, utilizza **OpenFaaS** per l'esecuzione serverless delle funzioni di calcolo e presenta un **Frontend React** moderno accessibile tramite Ingress Controller personalizzato.
+Il sistema è orchestrato su **Kubernetes**, utilizza **OpenFaaS** per l'esecuzione serverless delle funzioni di calcolo e presenta un **Frontend** moderno accessibile tramite Ingress Controller personalizzato.
 
 Progetto realizzato per il corso di **Virtual Networks and Cloud Computing**.
 
@@ -42,8 +42,8 @@ Il sistema segue un pattern a microservizi event-driven:
 * **Orchestrazione:** Kubernetes (Kubespray), Docker.
 * **Serverless:** OpenFaaS (Function-as-a-Service).
 * **Backend:** Python 3.9, FastAPI, Scikit-learn, Pandas.
-* **Frontend:** React.js, CSS3 Custom Properties.
-* **Networking:** Nginx Ingress Controller, MetalLB.
+* **Frontend:** HTML5, CSS3, JAVASCRIPT.
+* **Networking:** Nginx Ingress Controller.
 
 ---
 
